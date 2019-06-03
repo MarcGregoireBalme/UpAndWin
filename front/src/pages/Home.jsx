@@ -4,7 +4,7 @@ import './Home.css';
 import LogoJeu from '../img/League_of_Legends_Logo.png';
 import DisplayVideo from '../components/DisplayVideo';
 import 'bootstrap/dist/css/bootstrap.css';
-import NameForm from './NameForm';
+import Form from '../components/Form';
 
 
 class Home extends Component {
@@ -38,7 +38,7 @@ sont
           <DisplayVideo />
         </div>
         <div>
-          <NameForm />
+          <Form />
         </div>
       </div>
     );
