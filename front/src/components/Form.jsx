@@ -5,7 +5,17 @@ import './Form.css';
 class Form extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      modal: false,
+    };
+
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    this.setState(prevState => ({
+      modal: !prevState.modal,
+    }));
   }
 
   render() {
@@ -17,7 +27,7 @@ class Form extends Component {
         <h2>Formulaire d&apos;inscription</h2>
         <form onSubmit={handleSubmit}>
           <div>
-            <div>First Name</div>
+            <div toggle={this.toggle}>First Name</div>
             <div>
               <Field
                 name="firstName"
@@ -28,7 +38,7 @@ class Form extends Component {
             </div>
           </div>
           <div>
-            <div>Last Name</div>
+            <div toggle={this.toggle}>Last Name</div>
             <div>
               <Field
                 name="lastName"
@@ -39,7 +49,7 @@ class Form extends Component {
             </div>
           </div>
           <div>
-            <div>Email</div>
+            <div toggle={this.toggle}>Email</div>
             <div>
               <Field
                 name="email"
@@ -50,7 +60,7 @@ class Form extends Component {
             </div>
           </div>
           <div>
-            <div>Sex</div>
+            <div toggle={this.toggle}>Sex</div>
             <div>
               <div>
                 <Field name="sex" component="input" type="radio" value="male" />
@@ -65,7 +75,7 @@ class Form extends Component {
             </div>
           </div>
           <div>
-            <div>Favorite Color</div>
+            <div toggle={this.toggle}>Favorite Color</div>
             <div>
               <Field name="favoriteColor" component="select">
                 <option />
@@ -76,7 +86,7 @@ class Form extends Component {
             </div>
           </div>
           <div>
-            <div>Employed</div>
+            <div toggle={this.toggle}>Employed</div>
             <div>
               <Field
                 name="employed"
@@ -87,7 +97,7 @@ class Form extends Component {
             </div>
           </div>
           <div>
-            <div>Notes</div>
+            <div toggle={this.toggle}>Notes</div>
             <div>
               <Field name="notes" component="textarea" />
             </div>
